@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>for loyiso zanele 💛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14122b;--plum:#2d2358;--mango:#ffb703;--mint:#7be0c3;--rose:#ff6f91;--paper:#fff7e8;
+--f:'Bricolage Grotesque',system-ui,sans-serif;--h:'Caveat','Segoe Script',cursive}
+*{box-sizing:border-box;margin:0}
+html,body{min-height:100%}
+body{font-family:var(--f);text-transform:lowercase;color:var(--paper);background:radial-gradient(120% 90% at 50% 0%,var(--plum),var(--ink) 70%) fixed;overflow-x:hidden;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:16px}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.fl{position:absolute;bottom:-60px;opacity:0;animation:rise linear forwards}
+@keyframes rise{0%{opacity:0;transform:translateY(0) rotate(0)}15%{opacity:.9}100%{opacity:0;transform:translateY(-110vh) rotate(40deg)}}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:50}
+main{position:relative;z-index:2;width:100%;max-width:520px}
+.dots{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.dots i{width:10px;height:10px;border-radius:50%;background:#ffffff30;transition:.4s}
+.dots i.on{background:var(--mango);transform:scale(1.4);box-shadow:0 0 12px var(--mango)}
+.scene{display:none;text-align:center;background:#0000004d;border:1px solid #ffffff2a;border-radius:28px;padding:30px 22px;backdrop-filter:blur(8px)}
+.scene.show{display:block;animation:pop .6s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:none}}
+h1{font-size:clamp(2rem,8vw,3rem);line-height:1.08;font-weight:800;margin-bottom:10px}
+h2{font-size:clamp(1.6rem,6vw,2.2rem);font-weight:800;margin-bottom:12px}
+p{line-height:1.6;font-size:1.12rem;margin:10px 0}
+.hand{font-family:var(--h);font-size:1.9rem;color:var(--mango);line-height:1.2}
+.big{font-size:64px;display:inline-block;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(6deg)}}
+button{font:inherit;font-weight:700;text-transform:lowercase;border:0;border-radius:999px;padding:14px 28px;margin:8px 6px 0;cursor:pointer;color:var(--ink);background:var(--mango);box-shadow:0 6px 0 #b27f00;transition:transform .12s,box-shadow .12s}
+button:active{transform:translateY(5px);box-shadow:0 1px 0 #b27f00}
+button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+button.yes{background:var(--mint);box-shadow:0 6px 0 #3f9c83;font-size:1.2rem;animation:pulse 1.6s infinite}
+button.no{background:var(--rose);box-shadow:0 6px 0 #b03d5c}
+@keyframes pulse{50%{transform:scale(1.07)}}
+.meter{height:22px;border-radius:99px;background:#ffffff1f;overflow:hidden;margin:16px 0 4px}
+.meter div{height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--mango),var(--mint));transition:width .4s}
+.meter.auto div{width:0}
+.scene.show .meter.auto div{animation:fill 2.6s .4s ease-out forwards}
+@keyframes fill{to{width:100%}}
+.kit{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 4px}
+.kit button{margin:0;padding:16px 8px;background:#ffffff14;color:var(--paper);box-shadow:0 5px 0 #00000055;font-size:1.05rem;border:1px solid #ffffff33}
+.kit button span{display:block;font-size:2.2rem;margin-bottom:2px}
+.kit button.got{background:var(--mint);color:var(--ink);box-shadow:0 5px 0 #3f9c83;animation:got .5s}
+@keyframes got{40%{transform:scale(1.15) rotate(-5deg)}}
+.chat{min-height:60px}
+.msg{background:#00000055;border-left:4px solid var(--mango);border-radius:14px;padding:13px 15px;margin:10px 0;text-align:left;line-height:1.6;font-size:1.1rem;animation:slide .5s both}
+@keyframes slide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+.typing{display:inline-flex;gap:5px;padding:12px 16px;background:#00000055;border-radius:14px;margin:10px 0}
+.typing i{width:8px;height:8px;border-radius:50%;background:var(--mango);animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{50%{transform:translateY(-6px);opacity:.4}}
+.zulu{font-family:var(--h);font-size:1.7rem;line-height:1.25;color:var(--mint);margin:12px 0}
+.err{display:none;margin-top:16px;background:#3a0f1a;border:1px solid var(--rose);color:#ffd0da;border-radius:14px;padding:12px;font-size:1rem;text-align:left}
+.err.show{display:block;animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+.sm{font-size:.9rem;opacity:.8}
+.heart{display:inline-block;font-size:76px;animation:beat 1.1s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.22)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+.hearts{font-size:2rem;animation:beat 1.1s infinite}
+.ticket{position:relative;margin:18px 0 6px;padding:20px 18px;background:var(--paper);color:var(--ink);border-radius:18px;border:3px dashed #d4202e;text-align:left;transform:rotate(-1.5deg);animation:tk .9s .3s both cubic-bezier(.2,1.4,.4,1)}
+@keyframes tk{from{opacity:0;transform:translateY(40px) rotate(6deg) scale(.8)}to{opacity:1;transform:rotate(-1.5deg)}}
+.ticket h3{font-size:1.5rem;font-weight:800;color:#d4202e;margin-bottom:8px}
+.ticket div{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dotted #00000033;font-size:1.05rem}
+.ticket div b{text-align:right}
+.ticket .ok{color:#14803c}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}}
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<canvas id="cv"></canvas>
+<main>
+  <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <!-- 1: hello -->
+  <section class="scene" id="s0">
+    <div class="big">👋</div>
+    <h1>loyiso zanele,</h1>
+    <p>i hope this game 😂 finds you well.</p>
+    <button id="b0">start ✨</button>
+  </section>
+
+  <!-- 2: good luck -->
+  <section class="scene" id="s1">
+    <div class="big">🖊️</div>
+    <h1>good luck on your exam today!</h1>
+    <p>before you walk into the exam room, let's pack your exam kit. tap each item to put it in your bag. 🎒</p>
+    <div class="kit" id="kit">
+      <button><span>😂</span>your beauty</button>
+      <button><span>✏️</span>sharp pencils</button>
+      <button><span>🧠</span>calm mind</button>
+      <button><span>💪</span>big confidence</button>
+    </div>
+    <div class="meter"><div id="bar"></div></div>
+    <p class="sm" id="pct">bag: 0 of 4 packed</p>
+    <div id="luckDone" style="display:none">
+      <p class="hand">bag packed. go smash it, gojas! 🔥</p>
+      <p>breathe. read each question twice. trust what you know. you got this, phela ubufunda well im joking 🧠✨</p>
+      <button id="b1">next 💛</button>
+    </div>
+  </section>
+
+  <!-- 3: catch up -->
+  <section class="scene" id="s2">
+    <div class="big">💬</div>
+    <h2>lets catch up</h2>
+    <div class="chat" id="chat"></div>
+    <button id="more">continue 💬</button>
+  </section>
+
+  <!-- 4: ask -->
+  <section class="scene" id="s3">
+    <div class="heart">❤️</div>
+    <h2>magnum date? 🍫❤️</h2>
+    <p class="zulu">nkosazana, pholisa i khanda phela hawu ntombentle🙏❤️❤️<br>akukho okumnandi njengokubiza igama lakho, loyiso. ❤️<br>isigqi senhliziyo yami siyashintsha uma ngikubona. ❤️<br>nanoma kungaba nje ngaphansi kwemizuzu engu-30, umoya wami ungajabula kakhulu, sisi. ❤️</p>
+    <p>later today, in the early evening, so the ice cream doesn't melt 😂🍦<br>shall we say <b>18:45?</b> 🕡❤️</p>
+    <p class="sm">how much i want this</p>
+    <div class="meter auto"><div></div></div>
+    <p class="hand">i would really love that, you be my magnum date. will you? 🍦❤️</p>
+    <button class="yes" id="yes">yes ❤️</button>
+    <button class="no" id="no">no</button>
+    <div class="err" id="err" role="alert"></div>
+  </section>
+
+  <!-- 5: yes -->
+  <section class="scene" id="s4">
+    <div class="heart">❤️</div>
+    <h1>wow, thank you so much loyiso! 🎉</h1>
+    <p class="hand">thank you for agreeing to be my ice cream date, hle... 💛</p>
+    <p>i know you are the busy woman, loyiso. 🫶</p>
+    <div class="ticket">
+      <h3>🍦 magnum date ticket</h3>
+      <div>admit one <b>loyiso zanele</b></div>
+      <div>time <b>30 mins or less</b></div>
+      <div>status <b class="ok">confirmed ✅</b></div>
+    </div>
+    <p class="hand">please screenshot this and send it to me please 📸❤️</p>
+    <button id="again">replay 🔁</button>
+  </section>
+</main>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+var scenes=[0,1,2,3,4].map(function(n){return $('s'+n)});
+var dots=document.querySelectorAll('#dots i');
+var cur=0;
+
+function go(n){
+  scenes.forEach(function(s,i){s.classList.toggle('show',i===n)});
+  dots.forEach(function(d,i){d.classList.toggle('on',i===n)});
+  cur=n; window.scrollTo(0,0);
+}
+
+/* floating emojis, each scene has its own set */
+var sets=[['👋','😂','✨','💛'],['🖊️','📚','✏️','⭐','💪','🧠'],['💬','💛','🌙','🫶'],['❤️','🍦','❤️','🍫','💛','❤️'],['❤️','🍦','🎉','❤️','🍫','✨']];
+var sky=$('sky');
+setInterval(function(){
+  if(document.hidden)return;
+  var set=sets[cur],e=document.createElement('span');
+  e.className='fl';e.textContent=set[Math.floor(Math.random()*set.length)];
+  e.style.left=Math.random()*100+'vw';
+  e.style.fontSize=(18+Math.random()*26)+'px';
+  e.style.animationDuration=(6+Math.random()*6)+'s';
+  sky.appendChild(e);setTimeout(function(){e.remove()},12500);
+},450);
+
+/* confetti (hearts on the last two pages) */
+var cv=$('cv'),cx=cv.getContext('2d'),parts=[],run=false;
+function fit(){cv.width=innerWidth;cv.height=innerHeight}fit();addEventListener('resize',fit);
+function burst(n,x,y){
+  var cols=['#ffb703','#7be0c3','#ff6f91','#fff7e8','#9b8cff'];
+  for(var i=0;i<n;i++)parts.push({x:x==null?Math.random()*cv.width:x,y:y==null?-10:y,
+    vx:(Math.random()-.5)*(y==null?3:12),vy:y==null?2+Math.random()*4:-Math.random()*12,
+    s:5+Math.random()*7,c:cols[i%5],h:cur>=3&&i%3===0,r:Math.random()*6,vr:(Math.random()-.5)*.3,life:0});
+  if(!run){run=true;tick()}
+}
+function tick(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  parts=parts.filter(function(p){return p.y<cv.height+20&&p.life<260});
+  parts.forEach(function(p){
+    p.vy+=.18;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.life++;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);
+    if(p.h){cx.font=(p.s*3)+'px serif';cx.textAlign='center';cx.fillText('❤️',0,0)}
+    else{cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2)}
+    cx.restore();
+  });
+  if(parts.length)requestAnimationFrame(tick);else run=false;
+}
+
+/* step 1 */
+$('b0').onclick=function(){burst(60,innerWidth/2,innerHeight/2);go(1)};
+
+/* step 2: pack the exam kit */
+var packed=0;
+$('kit').addEventListener('click',function(e){
+  var b=e.target.closest('button');
+  if(!b||b.classList.contains('got'))return;
+  b.classList.add('got');packed++;
+  $('bar').style.width=(packed*25)+'%';
+  $('pct').textContent='bag: '+packed+' of 4 packed';
+  burst(24,e.clientX,e.clientY);
+  if(packed===4){$('luckDone').style.display='block';burst(140)}
+});
+$('b1').onclick=function(){go(2);nextMsg()};
+
+/* step 3: lets catch up, typed one message at a time */
+var msgs=[
+ 'lets catch up, loyiso. 💛',
+ 'i could not get a chance to get back to you on that day, i was mugged my phone was and beaten, so i was recovering. cela ungiphephisele, nkosazana. 🙏',
+ 'i am on my laptop now and it might disconnect anytime, nkosazana, but lokho akuhluphi. 💻',
+ 'okunghlphaya kungatholi ithuba lokuthii ngikhulume nawe😂'
+];
+var mi=0,busy=false;
+function nextMsg(){
+  if(mi>=msgs.length||busy)return;
+  busy=true;$('more').style.visibility='hidden';
+  var t=document.createElement('div');t.className='typing';t.innerHTML='<i></i><i></i><i></i>';
+  $('chat').appendChild(t);
+  setTimeout(function(){
+    t.remove();
+    var d=document.createElement('div');d.className='msg';d.textContent=msgs[mi++];
+    $('chat').appendChild(d);
+    busy=false;$('more').style.visibility='visible';
+    $('more').textContent=mi>=msgs.length?'next 💛':'continue 💬';
+  },900);
+}
+$('more').onclick=function(){
+  if(mi<msgs.length)nextMsg();else go(3);
+};
+
+/* step 4: the ask */
+var errs=[
+ 'error 403: the "no" button is not working right now. please try "yes". 💚',
+ 'error 500: "no" failed to load. our engineers (me) are not fixing it. 🛠️',
+ 'error 404: "no" could not be found. did you mean "yes"? 🍦',
+ 'fatal error: "no" is out of magnums. only "yes" is available. 🍫'
+];
+var ei=0;
+$('no').onclick=function(){
+  var el=$('err');el.classList.remove('show');void el.offsetWidth;
+  el.textContent='⚠️ '+errs[ei++%errs.length];el.classList.add('show');
+};
+$('yes').onclick=function(){
+  go(4);burst(160);setTimeout(function(){burst(100)},700);setTimeout(function(){burst(100)},1400);
+};
+$('again').onclick=function(){
+  packed=0;mi=0;ei=0;busy=false;
+  document.querySelectorAll('#kit button').forEach(function(b){b.classList.remove('got')});
+  $('bar').style.width='0';$('pct').textContent='bag: 0 of 4 packed';
+  $('luckDone').style.display='none';
+  $('chat').innerHTML='';$('more').textContent='continue 💬';$('more').style.visibility='visible';
+  $('err').classList.remove('show');go(0);
+};
+go(0);
+</script>
+</body>
+</html>
